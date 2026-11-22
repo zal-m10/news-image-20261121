@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Saturday 21 November 2026 — The World in One Day</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1024px; height: 1024px; overflow: hidden; }
+  body { background: #f8f4e8; font-family: Georgia, 'Times New Roman', serif; color: #1a1a1a; }
+  .page { width: 1024px; height: 1024px; padding: 8px 14px 6px 14px; }
+  /* ---------- top kicker ---------- */
+  .kicker { display: flex; justify-content: space-between; align-items: baseline;
+    font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: 700;
+    letter-spacing: 1.2px; color: #a31621; border-bottom: 2px solid #1a1a1a; padding-bottom: 4px; }
+  .kicker .right { font-weight: 700; }
+  /* ---------- masthead ---------- */
+  h1.masthead { font-family: Georgia, 'Times New Roman', serif; font-weight: 900;
+    font-size: 66px; line-height: 1.02; text-align: center; letter-spacing: -0.5px;
+    color: #111; padding: 2px 0 0 0; }
+  .subhead { text-align: center; font-style: italic; font-size: 17px; color: #333;
+    padding: 3px 0 5px 0; border-bottom: 2px solid #1a1a1a; }
+  .subhead b { font-style: normal; }
+  /* ---------- number strip ---------- */
+  .numbers { display: flex; border-bottom: 1px solid #1a1a1a; }
+  .num { flex: 1; padding: 4px 8px 5px 8px; border-left: 1px solid #999; }
+  .num:first-child { border-left: none; }
+  .num .big { font-family: Georgia, serif; font-weight: 900; font-size: 26px; color: #a31621; line-height: 1; }
+  .num .lbl { font-family: Arial, Helvetica, sans-serif; font-size: 9.5px; line-height: 1.25; color: #333; margin-top: 2px; }
+  /* ---------- region bar ---------- */
+  .regions { display: flex; font-family: Arial, Helvetica, sans-serif; font-size: 10px; font-weight: 700;
+    color: #fff; margin: 5px 0 6px 0; }
+  .regions span { flex: 1; text-align: center; padding: 3px 0; }
+  .r-eu { background: #1f4e79; } .r-as { background: #8b1a1a; } .r-me { background: #7a5a12; }
+  .r-af { background: #2e6b34; } .r-am { background: #5b2d8e; } .r-oc { background: #0e6b6b; }
+  .r-gl { background: #444; }
+  /* ---------- hero row ---------- */
+  .heroes { display: flex; gap: 10px; }
+  .hero { flex: 1; border-top: 3px solid #a31621; padding-top: 0; }
+  .hero .art { height: 72px; overflow: hidden; }
+  .hero .art img { display: block; width: 100%; height: 72px; object-fit: cover; }
+  .hero .kick { background: #a31621; color: #fff; font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px; font-weight: 800; letter-spacing: 0.4px; padding: 3px 6px;
+    display: flex; justify-content: space-between; }
+  .hero .kick .tag { font-size: 10px; font-weight: 700; background: #fff; color: #a31621; padding: 1px 5px; }
+  .hero .meta { font-family: Arial, Helvetica, sans-serif; font-size: 9.5px; font-weight: 700;
+    letter-spacing: 0.6px; color: #a31621; margin-top: 5px; }
+  .hero .meta .src { float: right; color: #555; font-weight: 400; letter-spacing: 0; }
+  .hero h2 { font-size: 19px; line-height: 1.08; font-weight: 900; margin: 2px 0 3px 0; }
+  .hero p { font-size: 11px; line-height: 1.3; color: #222; }
+  .hero p .src { color: #555; font-size: 10px; }
+  .hero .conf { display: inline-block; margin-top: 4px; font-family: Arial, Helvetica, sans-serif;
+    font-size: 8.5px; font-weight: 700; color: #fff; background: #2e6b34; padding: 1px 5px; }
+  .hero .conf.off { background: #1f4e79; }
+  /* ---------- secondary grid ---------- */
+  .grid { display: flex; flex-wrap: wrap; gap: 0; margin-top: 5px; border-top: 2px solid #1a1a1a; padding-top: 4px; }
+  .cell { width: 20%; padding: 0 7px 4px 7px; border-left: 1px solid #bbb; }
+  .cell:first-child, .cell:nth-child(6) { border-left: none; padding-left: 0; }
+  .cell .art { height: 42px; overflow: hidden; }
+  .cell .art img { display: block; width: 100%; height: 42px; object-fit: cover; }
+  .cell .kick { background: #a31621; color: #fff; font-family: Arial, Helvetica, sans-serif;
+    font-size: 10.5px; font-weight: 800; padding: 2px 5px; }
+  .cell .meta { font-family: Arial, Helvetica, sans-serif; font-size: 8.5px; font-weight: 700;
+    letter-spacing: 0.4px; color: #a31621; margin-top: 3px; }
+  .cell h3 { font-size: 12.5px; line-height: 1.12; font-weight: 900; margin: 1px 0 2px 0; }
+  .cell p { font-size: 9.5px; line-height: 1.26; color: #222; }
+  .cell p .src { color: #555; font-size: 9px; }
+  .cell .conf { display: inline-block; margin-top: 3px; font-family: Arial, Helvetica, sans-serif;
+    font-size: 8px; font-weight: 700; color: #fff; background: #2e6b34; padding: 1px 4px; }
+  .cell .conf.off { background: #1f4e79; }
+  .cell .conf.rep { background: #7a5a12; }
+  /* ---------- bottom section ---------- */
+  .bottom { display: flex; gap: 12px; margin-top: 5px; border-top: 2px solid #1a1a1a; padding-top: 4px; }
+  .mapbox { width: 300px; flex: none; }
+  .mapbox h4, .alsobox h4 { font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: 800;
+    letter-spacing: 1px; color: #a31621; margin-bottom: 3px; }
+  .mapbox .map { position: relative; height: 120px; overflow: hidden; }
+  .mapbox .map img { display: block; width: 100%; height: 120px; object-fit: cover; }
+  .mapbox .map .pin { position: absolute; width: 17px; height: 17px; transform: translate(-50%,-50%); display: flex; align-items: center; justify-content: center; background: #a31621; color: #fff; border: 1.5px solid #fff; border-radius: 50%; font-family: Arial, Helvetica, sans-serif; font-size: 10px; font-weight: 800; }
+  .mapbox .note { font-size: 9px; color: #555; font-style: italic; margin-top: 2px; }
+  .alsobox { flex: 1; }
+  .alsobox .cols { display: flex; gap: 14px; }
+  .alsobox ul { list-style: none; flex: 1; }
+  .alsobox li { font-size: 10px; line-height: 1.24; padding: 1px 0; color: #222; }
+  .alsobox li b.n { color: #a31621; font-family: Arial, Helvetica, sans-serif; font-size: 9.5px; }
+  .alsobox li b.pl { color: #1a1a1a; }
+  .alsobox li .src { color: #666; font-size: 9px; }
+  /* ---------- date check ---------- */
+  .datecheck { border: 2px solid #a31621; margin-top: 5px; padding: 4px 8px; display: flex; gap: 8px; }
+  .datecheck .lbl { flex: none; background: #a31621; color: #fff; font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px; font-weight: 800; letter-spacing: 0.5px; padding: 3px 6px; align-self: flex-start; }
+  .datecheck p { font-size: 10.5px; line-height: 1.35; color: #222; }
+  .datecheck p b { color: #a31621; }
+  /* ---------- footer ---------- */
+  .footer { margin-top: 4px; font-size: 8.5px; color: #444; text-align: center; line-height: 1.35; white-space: nowrap; }
+  .footer b { color: #1a1a1a; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="kicker">
+    <span>THE WORLD IN ONE DAY</span>
+    <span class="right">35 STORIES &middot; 7 REGIONS &middot; EVERY ONE DATED SATURDAY 21 NOVEMBER 2026</span>
+  </div>
+
+  <h1 class="masthead">Saturday 21 November 2026</h1>
+
+  <div class="subhead">Climate talks run into overtime &middot; Iran strikes Bahrain &middot; Strong quake shakes Peru</div>
+
+  <div class="numbers">
+    <div class="num"><div class="big">3</div><div class="lbl">missiles shot down over Riyadh</div></div>
+    <div class="num"><div class="big">DAY 13</div><div class="lbl">of COP31, a day past its close</div></div>
+    <div class="num"><div class="big">6.7</div><div class="lbl">magnitude of the Peru quake</div></div>
+    <div class="num"><div class="big">146</div><div class="lbl">people safe after a jet&rsquo;s emergency landing</div></div>
+    <div class="num"><div class="big">$58,983</div><div class="lbl">Bitcoin early Saturday, down 3.9% in a day</div></div>
+    <div class="num"><div class="big">11</div><div class="lbl">dead after the Sinaloa raid</div></div>
+  </div>
+
+  <div class="regions">
+    <span class="r-eu">EUROPE 8</span><span class="r-as">ASIA 9</span><span class="r-me">MIDDLE EAST 6</span><span class="r-af">AFRICA 1</span><span class="r-am">AMERICAS 7</span><span class="r-oc">OCEANIA 2</span><span class="r-gl">GLOBAL 2</span>
+  </div>
+
+  <!-- ================= HERO ROW ================= -->
+  <div class="heroes">
+    <!-- 1 COP31 -->
+    <div class="hero">
+      <div class="art"><img src="img/hero-cop31.jpg" alt="UN climate summit conference hall"></div>
+      <div class="kick"><span>COP31: OVERTIME</span><span class="tag">NO DEAL &middot; DAY 13</span></div>
+      <div class="meta">1 &middot; ANTALYA, T&Uuml;RKIYE &middot; CLIMATE <span class="src">AFP &middot; AP</span></div>
+      <h2>Climate summit runs into day 13 with no deal</h2>
+      <p>COP31 missed its Friday close. A draft with no mention of fossil fuels split nearly 200 countries; a third text is promised. <span class="src">(AFP, Al Jazeera)</span></p>
+      <span class="conf">CONFIRMED</span>
+    </div>
+    <!-- 2 BAHRAIN -->
+    <div class="hero">
+      <div class="art"><img src="img/hero-bahrain.jpg" alt="Gulf city skyline at night, fire glow and smoke"></div>
+      <div class="kick"><span>BAHRAIN: IRAN STRIKE</span><span class="tag">FIRE &middot; NO INJURIES</span></div>
+      <div class="meta">2 &middot; MANAMA, BAHRAIN &middot; CONFLICT <span class="src">Reuters &middot; Al Jazeera</span></div>
+      <h2>Iran says it struck two US bases; Bahrain reports a fire</h2>
+      <p>Iran&rsquo;s Revolutionary Guard said it hit two US military positions. Bahrain said a civilian industrial site caught fire; no one was hurt and air defences stopped aerial attacks. <span class="src">(Reuters, Al Jazeera)</span></p>
+      <span class="conf off">OFFICIAL</span>
+    </div>
+    <!-- 3 PERU -->
+    <div class="hero">
+      <div class="art"><img src="img/hero-peru.jpg" alt="Andean town street after an earthquake"></div>
+      <div class="kick"><span>PERU: QUAKE 6.7</span><span class="tag">00:09 UTC &middot; 108 KM DEEP</span></div>
+      <div class="meta">3 &middot; JUN&Iacute;N, PERU &middot; EARTHQUAKE <span class="src">USGS &middot; IGP</span></div>
+      <h2>Magnitude 6.7 earthquake shakes central Peru</h2>
+      <p>The deep quake near Carhuamayo was felt in Lima and along the coast. Peru&rsquo;s institute reported no deaths, no damage and no tsunami risk. <span class="src">(USGS, Gesti&oacute;n)</span></p>
+      <span class="conf off">OFFICIAL</span>
+    </div>
+  </div>
+
+  <!-- ================= SECONDARY GRID ================= -->
+  <div class="grid">
+    <!-- 4 SAUDI -->
+    <div class="cell">
+      <div class="art"><img src="img/cell-saudi.jpg" alt="Interceptor missile trails over a Gulf capital at night"></div>
+      <div class="kick">SAUDI: MISSILES</div>
+      <div class="meta">4 &middot; RIYADH &middot; WAR</div>
+      <h3>Saudi intercepts three Houthi missiles over Riyadh</h3>
+      <p>Air defences stopped three ballistic missiles early on Saturday, the third straight night of alerts for the capital. <span class="src">(AFP)</span></p>
+      <span class="conf off">OFFICIAL</span>
+    </div>
+    <!-- 5 HORMUZ -->
+    <div class="cell">
+      <div class="art"><img src="img/cell-hormuz.jpg" alt="Oil tankers at sea at dusk, one trailing smoke"></div>
+      <div class="kick">HORMUZ: TANKERS</div>
+      <div class="meta">5 &middot; STRAIT OF HORMUZ &middot; SHIPPING</div>
+      <h3>Two tankers hit off Oman; a third &ldquo;hit a mine&rdquo;</h3>
+      <p>Unknown projectiles struck two tankers off Khasab. Iran says a third vessel hit a mine. No casualties were reported. <span class="src">(UKMTO)</span></p>
+      <span class="conf off">OFFICIAL</span>
+    </div>
+    <!-- 6 SINALOA -->
+    <div class="cell">
+      <div class="art"><img src="img/cell-sinaloa.jpg" alt="Mexican federal forces beside armoured vehicles" style="object-position: center 20%;"></div>
+      <div class="kick">SINALOA: CAPTURED</div>
+      <div class="meta">6 &middot; GUASAVE, MEXICO &middot; CRIME</div>
+      <h3>Mexico captures FBI most-wanted cartel boss</h3>
+      <p>Troops seized Fausto Isidro Meza Flores, &ldquo;El Chapo Isidro&rdquo;, in Guasave. Gunfights, fires and roadblocks followed; 11 people died. <span class="src">(AP)</span></p>
+      <span class="conf">CONFIRMED</span>
+    </div>
+    <!-- 7 EU-INDONESIA -->
+    <div class="cell">
+      <div class="art"><img src="img/cell-eu-indonesia.jpg" alt="Officials shaking hands over a signed document"></div>
+      <div class="kick">EU-INDONESIA: DEAL</div>
+      <div class="meta">7 &middot; BRUSSELS &middot; TRADE</div>
+      <h3>EU and Indonesia sign a trade pact after a decade of talks</h3>
+      <p>Signed in Brussels with an investment pact; duties go on 98.5% of EU tariff lines and 90.4% of Indonesia&rsquo;s. <span class="src">(European Commission)</span></p>
+      <span class="conf off">OFFICIAL</span>
+    </div>
+    <!-- 8 BALTIC -->
+    <div class="cell">
+      <div class="art"><img src="img/cell-baltic.jpg" alt="Cargo ship on fire at sea"></div>
+      <div class="kick">BALTIC: SHIP ABLAZE</div>
+      <div class="meta">8 &middot; GULF OF FINLAND &middot; WAR</div>
+      <h3>Drones set a Russian cargo ship ablaze</h3>
+      <p>The Sparta II caught fire after a drone strike and drifted into Finnish waters. All 16 crew were evacuated. <span class="src">(BBC)</span></p>
+      <span class="conf off">OFFICIAL</span>
+    </div>
+    <!-- 9 KRYVYI RIH -->
+    <div class="cell">
+      <div class="art"><img src="img/cell-kryvyi.jpg" alt="Damaged apartment building with smoke"></div>
+      <div class="kick">KRYVYI RIH: STRIKE</div>
+      <div class="meta">9 &middot; UKRAINE &middot; WAR</div>
+      <h3>Russian missile hits a city centre; 2 killed</h3>
+      <p>A ballistic missile struck the centre of Kryvyi Rih on Saturday, killing two people and wounding dozens. <span class="src">(AP)</span></p>
+      <span class="conf rep">REPORTED</span>
+    </div>
+    <!-- 10 BITCOIN -->
+    <div class="cell">
+      <div class="art"><img src="img/cell-bitcoin.jpg" alt="Gold Bitcoin coin beside a trading chart"></div>
+      <div class="kick">BITCOIN: $58,983</div>
+      <div class="meta">10 &middot; WORLD &middot; MARKETS</div>
+      <h3>Bitcoin trades below $59,000 on Saturday</h3>
+      <p>Down about 3.9% in 24 hours; ether at $1,625. <span class="src">(CoinGecko)</span></p>
+      <span class="conf">CONFIRMED</span>
+    </div>
+    <!-- 11 MERCURY -->
+    <div class="cell">
+      <div class="art"><img src="img/cell-mercury.jpg" alt="Spacecraft near the planet Mercury"></div>
+      <div class="kick">MERCURY: BURN</div>
+      <div class="meta">11 &middot; SPACE &middot; SCIENCE</div>
+      <h3>BepiColombo fires a 37-minute burn for Mercury orbit</h3>
+      <p>The 37-minute burn began at 18:24 UTC to put the probe into orbit around Mercury. <span class="src">(ESA)</span></p>
+      <span class="conf off">OFFICIAL</span>
+    </div>
+    <!-- 12 FRANCE -->
+    <div class="cell">
+      <div class="art"><img src="img/cell-france.jpg" alt="Street protest in Paris"></div>
+      <div class="kick">FRANCE: PROTESTS</div>
+      <div class="meta">12 &middot; FRANCE &middot; SOCIETY</div>
+      <h3>Sixth Saturday of protests draws 82,500</h3>
+      <p>The interior ministry counted 82,500 protesters across France; more than 70,000 police were on duty. <span class="src">(France 24)</span></p>
+      <span class="conf off">OFFICIAL</span>
+    </div>
+    <!-- 13 GENEVA -->
+    <div class="cell">
+      <div class="art"><img src="img/cell-geneva.jpg" alt="UN meeting room in Geneva"></div>
+      <div class="kick">GENEVA: AI ARMS</div>
+      <div class="meta">13 &middot; GENEVA &middot; ARMS CONTROL</div>
+      <h3>128 nations agree to draft rules on AI weapons</h3>
+      <p>States agreed to draft rules for AI weapons, with a text due by 2028. <span class="src">(Al Jazeera)</span></p>
+      <span class="conf rep">REPORTED</span>
+    </div>
+  </div>
+
+  <!-- ================= BOTTOM: MAP + ALSO ================= -->
+  <div class="bottom">
+    <div class="mapbox">
+      <h4>WHERE IT HAPPENED</h4>
+      <div class="map">
+        <img src="img/map-world.jpg" alt="World map">
+        <span class="pin" style="left: 56.00%; top: 33.33%;">1</span>
+        <span class="pin" style="left: 71.33%; top: 26.67%;">2</span>
+        <span class="pin" style="left: 29.00%; top: 57.50%;">3</span>
+        <span class="pin" style="left: 60.67%; top: 45.00%;">4</span>
+        <span class="pin" style="left: 72.67%; top: 45.00%;">5</span>
+        <span class="pin" style="left: 20.00%; top: 32.50%;">6</span>
+        <span class="pin" style="left: 48.67%; top: 10.00%;">7</span>
+        <span class="pin" style="left: 58.00%; top: 7.50%;">8</span>
+        <span class="pin" style="left: 60.67%; top: 23.33%;">9</span>
+        <span class="pin" style="left: 48.67%; top: 25.00%;">12</span>
+        <span class="pin" style="left: 53.67%; top: 17.50%;">13</span>
+        <span class="pin" style="left: 82.67%; top: 60.00%;">14</span>
+        <span class="pin" style="left: 84.00%; top: 31.67%;">15</span>
+        <span class="pin" style="left: 64.00%; top: 9.17%;">16</span>
+        <span class="pin" style="left: 36.67%; top: 60.83%;">17</span>
+        <span class="pin" style="left: 86.00%; top: 46.67%;">18</span>
+        <span class="pin" style="left: 77.33%; top: 33.33%;">19</span>
+        <span class="pin" style="left: 65.33%; top: 33.33%;">20</span>
+        <span class="pin" style="left: 94.00%; top: 70.00%;">24</span>
+        <span class="pin" style="left: 15.67%; top: 15.83%;">26</span>
+        <span class="pin" style="left: 88.00%; top: 81.67%;">34</span>
+      </div>
+      <div class="note">Each number is the story with that number on this page.</div>
+    </div>
+    <div class="alsobox">
+      <h4>ALSO ON SATURDAY 21 NOVEMBER 2026 &mdash; 22 MORE STORIES</h4>
+      <div class="cols">
+        <ul>
+          <li><b class="n">14</b> <b class="pl">Banda Sea:</b> M6.8 quake off Timor-Leste at 09:42 UTC, no tsunami <span class="src">(USGS)</span></li>
+          <li><b class="n">15</b> <b class="pl">Taiwan:</b> 21 Chinese jets hold a patrol across the Strait median line <span class="src">(Taipei)</span></li>
+          <li><b class="n">16</b> <b class="pl">Ust-Luga:</b> Ukrainian drones hit Russia&rsquo;s Ust-Luga port <span class="src">(Kyiv Post)</span></li>
+          <li><b class="n">17</b> <b class="pl">Bolsonaro:</b> Brazil&rsquo;s ex-president moved to intensive care in Brasilia <span class="src">(Reuters)</span></li>
+          <li><b class="n">18</b> <b class="pl">Davao:</b> Air Niugini jet lands safely after an engine fire alert; all 146 safe <span class="src">(AP)</span></li>
+          <li><b class="n">19</b> <b class="pl">Manipur:</b> toxic liquor kills at least 11, hospitalises 180+ <span class="src">(ANI)</span></li>
+          <li><b class="n">20</b> <b class="pl">Basra:</b> power plant fire kills 2&ndash;4, injures 35 <span class="src">(Al Jazeera)</span></li>
+          <li><b class="n">21</b> <b class="pl">Iran:</b> Tehran says it downed a US drone near Qeshm; US denies an F-16 was hit <span class="src">(IRIB)</span></li>
+          <li><b class="n">22</b> <b class="pl">Trump:</b> vows a tax on data centres abroad <span class="src">(ABC)</span></li>
+          <li><b class="n">23</b> <b class="pl">China-Japan:</b> Beijing tells Tokyo to &ldquo;correct&rdquo; its Taiwan words <span class="src">(AFP)</span></li>
+          <li><b class="n">24</b> <b class="pl">Canberra:</b> Australia and China agree to AI talks <span class="src">(ABC)</span></li>
+        </ul>
+        <ul>
+          <li><b class="n">25</b> <b class="pl">India:</b> KL Rahul 124* as India reach 486-4 v New Zealand, Wellington <span class="src">(ICC)</span></li>
+          <li><b class="n">26</b> <b class="pl">Las Vegas:</b> Russell fastest in final F1 practice (1:34.041) <span class="src">(Formula 1)</span></li>
+          <li><b class="n">27</b> <b class="pl">Gaza:</b> Israeli drone strike kills 3 in Gaza City <span class="src">(Al Jazeera)</span></li>
+          <li><b class="n">28</b> <b class="pl">EU budget:</b> Costa proposes a EUR 1.582tn 2028&ndash;34 budget <span class="src">(European Council)</span></li>
+          <li><b class="n">29</b> <b class="pl">Nigeria:</b> gunmen kill 6 in a Niger State village <span class="src">(AFP)</span></li>
+          <li><b class="n">30</b> <b class="pl">Thailand:</b> emergency plan for arsenic in two rivers <span class="src">(The Nation)</span></li>
+          <li><b class="n">31</b> <b class="pl">Vancouver:</b> Canada rests its defence in a youth climate trial <span class="src">(AFP)</span></li>
+          <li><b class="n">32</b> <b class="pl">Pyongyang:</b> Kim tours factories <span class="src">(KCNA)</span></li>
+          <li><b class="n">33</b> <b class="pl">Sejong:</b> freight train derails, none hurt <span class="src">(Korea Herald)</span></li>
+          <li><b class="n">34</b> <b class="pl">Melbourne:</b> Australia beat England by 3 wickets in a T20 <span class="src">(ABC)</span></li>
+          <li><b class="n">35</b> <b class="pl">Las Vegas:</b> Verstappen sent to stewards after contact <span class="src">(Autosport)</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= DATE CHECK ================= -->
+  <div class="datecheck">
+    <span class="lbl">DATE CHECK</span>
+    <p><b>Left out because they belong to Friday 20 November or earlier:</b> Russian missiles landing in Poland, Denmark expelling a Russian attach&eacute;, the ICJ Myanmar genocide ruling (19 Nov), Wall Street&rsquo;s fall into a correction, the UK-EU deal, Cyclone Akvan&rsquo;s landfall. Older still: Voyager 1&rsquo;s light-day (18 Nov). <b>Not confirmed when drawn, so not shown:</b> BepiColombo&rsquo;s orbit insertion, a final COP31 text.</p>
+  </div>
+
+  <div class="footer">Every story here happened, or was first reported, on <b>Saturday 21 November 2026</b>. Sources named beside each story &middot; Original photos &middot; HOW WE CHECKED: <b>CONFIRMED</b> = 2+ outlets &middot; <b>OFFICIAL</b> = on the record &middot; <b>REPORTED</b> = one outlet &middot; <b>CLAIM</b> = one side&rsquo;s account</div>
+
+</div>
+</body>
+</html>
